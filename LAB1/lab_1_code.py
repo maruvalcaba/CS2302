@@ -4,7 +4,7 @@ Course: CS2302
 Author: Manuel Ruvalcaba
 Assignment: Lab 1
 Instructor: Dr. Olac Fuentes
-TA: Anindita Nath
+TA: Anindita Nath, Maliheh Zargaran
 Date of last modification: 02/08/19
 Purpose of program: The purpose of this program is to draw and save various
 shapes through recursion.

@@ -14,14 +14,14 @@ import matplotlib.pyplot as plt
 import numpy as np
 import math 
 
-def circle(center,rad):
+def circle(center,rad): #makes the circle
     n = int(4*rad*math.pi)
     t = np.linspace(0,6.3,n)
     x = center[0]+rad*np.sin(t)
     y = center[1]+rad*np.cos(t)
     return x,y
 
-def draw_circles(ax,n,center,radius,w):
+def draw_circles(ax,n,center,radius,w): #plots the points for the circles in the second part of the lab
     if n>0:
         x,y = circle(center,radius)
         ax.plot(x,y,color='k')
@@ -51,7 +51,7 @@ ax.axis('off')
 plt.show()
 fig.savefig('circles_3.png')
 
-def draw_circles2(ax,n,center,radius,w):
+def draw_circles2(ax,n,center,radius,w): #plots the circles for the fourth part of the lab
     if n>0:
         x,y = circle(center,radius)
         ax.plot(x,y,color='k')
@@ -84,7 +84,7 @@ ax.axis('off')
 plt.show()
 fig.savefig('circles2_3.png')
 
-def draw_cornerSquares(ax,n,p,w):
+def draw_cornerSquares(ax,n,p,w): #plots the squares for the first part of the lab
     if n>0:
         q = np.zeros((5,2)) #array with points for the corners of the corner square
         k = (p[3,0]-p[0,0])/4 # 1/4 the distance from one corner to another
@@ -133,7 +133,7 @@ ax.axis('off')
 plt.show()
 fig.savefig('squares_3.png')
 
-def draw_tree(ax,n,p,w):
+def draw_tree(ax,n,p,w): #plots the trees for the third part of the lab
     if n>0:
         q = np.zeros((3,2)) #array with point for the new tree
         dx = (p[0,0]-p[2,0])/4 #difference in x between children nodes

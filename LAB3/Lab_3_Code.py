@@ -32,6 +32,7 @@ def Insert(T,newItem):
     return T
 
 def Delete(T,del_item):
+    #Deletes an element
     if T is not None:
         if del_item < T.item:
             T.left = Delete(T.left,del_item)
@@ -80,6 +81,7 @@ def Smallest(T):
         return Smallest(T.left)
 
 def Largest(T):
+    #Returns the largest element
     if T.right is None:
         return T
     else:
@@ -163,6 +165,7 @@ def PrintAtDepths(T):
         print()
 
 def PrintLevel(T,d):
+    #Prints the keys at the different levels
     if T is None: 
         return
     if d == 0: 

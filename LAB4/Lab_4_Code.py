@@ -151,7 +151,7 @@ def Extractor(T,a):
     return a
     
 def SmallestAtDepthD(T,d):
-    #returns the smallest item at a specified depth 'd'
+    #Returns the smallest item at a specified depth 'd'
     if d == 0:
         return T.item[0]
     if T.isLeaf:
@@ -160,7 +160,7 @@ def SmallestAtDepthD(T,d):
         return SmallestAtDepthD(T.child[0],d-1)
 
 def LargestAtDepthD(T,d):
-    #returns the largest item at a specified depth 'd'
+    #Returns the largest item at a specified depth 'd'
     if d == 0:
         return T.item[-1]
     if T.isLeaf:
@@ -169,7 +169,7 @@ def LargestAtDepthD(T,d):
         return LargestAtDepthD(T.child[-1],d-1)
     
 def NodesAtLevel(T,d):
-    #returns the number of Nodes at the a specified level 'd'
+    #Returns the number of Nodes at the a specified level 'd'
     num = 0
     if d == 0: 
         return 1
@@ -192,7 +192,7 @@ def PrintLevel(T,d):
             PrintLevel(T.child[i], d-1)
             
 def FullNodes(T):
-    #returns the number of nodes that are full
+    #Returns the number of nodes that are full
     if T.isLeaf and len(T.item) == T.max_items:
         return 1
     if len(T.item) == T.max_items:
@@ -205,7 +205,7 @@ def FullNodes(T):
     return num
 
 def FullLeaves(T):
-    #returns the number of leaves that are full
+    #Returns the number of leaves that are full
     if T.isLeaf and len(T.item) == T.max_items:
         return 1
     if T.isLeaf:
@@ -216,7 +216,7 @@ def FullLeaves(T):
     return num
 
 def FindDepth(T,k):
-    #finds and returns the depth of a given key, returns -1 if not found
+    #Finds and returns the depth of a given key, returns -1 if not found
     if k in T.item:
         return 0
     if T.isLeaf:
@@ -236,7 +236,7 @@ def FindDepth(T,k):
         else:
             return depth + 1
         
-#this is where you test the code
+#This is where you test the code
 
 L = [30, 50, 10, 20, 60, 70, 100, 40, 90, 80, 110, 120, 1, 11 , 3, 4, 5,105, 115, 200, 2, 45, 6]
 T = BTree()    

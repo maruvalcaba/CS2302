@@ -34,7 +34,7 @@ def equalities(f, tolerance=0.0001):
                     result.append([f[i],f[j]])
     return result
 
-def subsetSum1(arr, last, sum1, sum2, i): 
+def equalSubsets1(arr, last, sum1, sum2, i): 
     #finds two subsets that have an equal sum, if none are found, returns False
     if i == last:
         #checks if the whole set has been traversed
@@ -42,17 +42,17 @@ def subsetSum1(arr, last, sum1, sum2, i):
             return True,[],[]
         else: 
             return False,[],[]
-    res,sub1,sub2 = subsetSum1(arr, last, sum1 + arr[i], sum2, i + 1) 
+    res,sub1,sub2 = equalSubsets1(arr, last, sum1 + arr[i], sum2, i + 1) 
     if res: 
         sub1.append(arr[i])
         return res,sub1,sub2
-    res,sub1,sub2 = subsetSum1(arr, last, sum1, sum2 + arr[i], i + 1)
+    res,sub1,sub2 = equalSubsets1(arr, last, sum1, sum2 + arr[i], i + 1)
     if res:
         sub2.append(arr[i])
         return res,sub1,sub2
     return False,sub1,sub2
 
-def subsetSum(arr,n):
+def equalSubsets(arr,n):
     sumSet = 0
     print('Set:')
     print(arr)
@@ -64,7 +64,7 @@ def subsetSum(arr,n):
         print('There are no equal subsets')
     else:    
         #if the sum is even, there is a chance for an equal parition
-        s,a,b = subsetSum1(arr,n,0,0,0)
+        s,a,b = equalSubsets1(arr,n,0,0,0)
         if s:
             print('Equal Subsets:')
             print(a,b)
@@ -87,6 +87,6 @@ print()
 
 A = [2,4,5,9,12]
 start = timeit.default_timer()
-subsetSum(A,len(A))
+equalSubsets(A,len(A))
 stop = timeit.default_timer()
 print('Time to check for subsets in milliseconds:', (stop - start)*1000)    
